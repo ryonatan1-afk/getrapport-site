@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.vite/
+.agents/
+.claude/
+skills-lock.json

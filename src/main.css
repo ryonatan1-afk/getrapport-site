@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* ── Custom font ── */
+@theme {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+html  { scroll-behavior: smooth; }
+body  { background-color: #F8FAFC; overflow-x: hidden; }
+
+/* ── Scroll-reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+.reveal-d5 { transition-delay: 0.40s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html    { scroll-behavior: auto; }
+  *       { animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important; }
+}
+
+/* ── Hero gradient ── */
+.hero-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 65% 45%, #EFF6FF 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 5% 85%, #F0F9FF 0%, transparent 55%),
+    #F8FAFC;
+}
+
+/* ── Email mock shadow ── */
+.email-shadow {
+  box-shadow:
+    0 2px 4px rgba(0,0,0,.04),
+    0 8px 20px rgba(15,23,42,.06),
+    0 24px 64px rgba(15,23,42,.10);
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  background-color: #0369A1;
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+.btn-primary:hover  { background-color: #025d8e; transform: translateY(-1px); box-shadow: 0 8px 24px -4px rgba(3,105,161,.38); }
+.btn-primary:active { transform: translateY(0); }
+.btn-primary:focus-visible { outline: 3px solid #7DD3FC; outline-offset: 3px; }
+
+.btn-ghost {
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+.btn-ghost:hover         { background-color: #fff; border-color: #CBD5E1; }
+.btn-ghost:focus-visible { outline: 3px solid #7DD3FC; outline-offset: 3px; }
+
+/* ── Feature cards ── */
+.feature-card { transition: border-color 0.18s ease, box-shadow 0.18s ease; cursor: default; }
+.feature-card:hover { border-color: #BAE6FD; box-shadow: 0 4px 24px -4px rgba(3,105,161,.10); }
+
+/* ── Testimonial cards ── */
+.testi-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.testi-card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px -8px rgba(15,23,42,.12); }
+
+/* ── FAQ accordion ── */
+.faq-body  { max-height: 0; overflow: hidden; transition: max-height 0.32s ease; }
+.faq-body.open { max-height: 400px; }
+.plus-icon { transition: transform 0.28s ease; }
+.plus-icon.open { transform: rotate(45deg); }
+.faq-btn   { cursor: pointer; }
+.faq-btn:focus-visible { outline: 3px solid #7DD3FC; outline-offset: -3px; border-radius: 0.75rem; }
+
+/* ── Nav links ── */
+.nav-link { transition: color 0.15s ease; }
+.nav-link:focus-visible { outline: 3px solid #7DD3FC; outline-offset: 3px; border-radius: 4px; }
+
+/* ── Misc ── */
+.stat-num { font-variant-numeric: tabular-nums; }
+.hs-dot   { background-color: #FF7A59; }
+.star     { color: #F59E0B; }
+.section-alt { background-color: #fff; }
