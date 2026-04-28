@@ -1,3 +1,15 @@
+// ── Analytics ────────────────────────────────────────────────────────────────
+function trackEvent(name, params = {}) {
+  if (typeof gtag === 'function') gtag('event', name, params)
+}
+
+// CTA buttons
+document.querySelectorAll('[data-track]').forEach(el => {
+  el.addEventListener('click', () => {
+    trackEvent('cta_click', { cta_label: el.dataset.track })
+  })
+})
+
 // ── Scroll-reveal observer (declared first — used by FAQ render below) ──────
 const revealObserver = new IntersectionObserver(
   entries => {
@@ -87,6 +99,7 @@ document.addEventListener('click', e => {
     body.classList.add('open')
     icon.classList.add('open')
     btn.setAttribute('aria-expanded', 'true')
+    trackEvent('faq_open', { faq_question: btn.querySelector('span').textContent.trim() })
   }
 })
 
