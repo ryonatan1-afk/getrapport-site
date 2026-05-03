@@ -80,8 +80,8 @@ export const DigestScene = () => {
 	const {fps} = useVideoConfig();
 
 	const emailSlide = spring({frame, fps, config: {damping: 18, stiffness: 90}});
-	const labelOpacity = interpolate(frame, [0, 18], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [460, 510], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const labelOpacity = interpolate(frame, [0, 12], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const fadeOut = interpolate(frame, [330, 360], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
 	const emailX = interpolate(emailSlide, [0, 1], [80, 0]);
 
@@ -142,7 +142,7 @@ export const DigestScene = () => {
 							</div>
 						</div>
 						{contacts.map((c, i) => (
-							<ContactCard key={c.name} contact={c} delay={30 + i * 40} highlight={i === 0} />
+							<ContactCard key={c.name} contact={c} delay={20 + i * 30} highlight={i === 0} />
 						))}
 						<div style={{fontSize: 11, color: '#94a3b8', textAlign: 'center', marginTop: 8}}>+ 1 more in this digest</div>
 					</div>

@@ -32,8 +32,8 @@ const ProblemCard = ({icon, title, body, delay}: {icon: string; title: string; b
 
 export const ProblemScene = () => {
 	const frame = useCurrentFrame();
-	const headingOpacity = interpolate(frame, [0, 20], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [210, 240], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const headingOpacity = interpolate(frame, [0, 12], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const fadeOut = interpolate(frame, [95, 120], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
 	return (
 		<AbsoluteFill style={{background: '#f8fafc', padding: '64px 80px', opacity: fadeOut}}>
@@ -48,7 +48,7 @@ export const ProblemScene = () => {
 			</div>
 			<div style={{display: 'flex', gap: 20, flex: 1}}>
 				{problems.map((p, i) => (
-					<ProblemCard key={p.title} {...p} delay={20 + i * 25} />
+					<ProblemCard key={p.title} {...p} delay={10 + i * 15} />
 				))}
 			</div>
 		</AbsoluteFill>

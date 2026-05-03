@@ -6,11 +6,11 @@ import {OpenDraftScene} from './scenes/OpenDraftScene';
 import {Outro} from './scenes/Outro';
 
 // Scene timing (frames at 30fps)
-// Intro:       0  –  90  (3s)
-// Problem:    90  – 330  (8s)
-// Digest:    330  – 840  (17s)
-// OpenDraft: 840  – 1170 (11s)
-// Outro:    1170  – 1500 (11s)
+// Intro:      0  –  90  (3s)
+// Problem:   90  – 210  (4s)
+// Digest:   210  – 570  (12s)
+// OpenDraft:570  – 750  (6s)
+// Outro:    750  – 900  (5s)
 
 export const RapportDemo = () => {
 	return (
@@ -18,16 +18,16 @@ export const RapportDemo = () => {
 			<Sequence from={0} durationInFrames={90}>
 				<Intro />
 			</Sequence>
-			<Sequence from={90} durationInFrames={240}>
+			<Sequence from={90} durationInFrames={120}>
 				<ProblemScene />
 			</Sequence>
-			<Sequence from={330} durationInFrames={510}>
+			<Sequence from={210} durationInFrames={360}>
 				<DigestScene />
 			</Sequence>
-			<Sequence from={840} durationInFrames={330}>
+			<Sequence from={570} durationInFrames={180}>
 				<OpenDraftScene />
 			</Sequence>
-			<Sequence from={1170} durationInFrames={330}>
+			<Sequence from={750} durationInFrames={150}>
 				<Outro />
 			</Sequence>
 		</AbsoluteFill>
