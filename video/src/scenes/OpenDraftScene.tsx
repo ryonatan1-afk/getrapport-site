@@ -8,12 +8,12 @@ export const OpenDraftScene = () => {
 	const emailSlide = spring({frame, fps, config: {damping: 18, stiffness: 160}});
 	const cursorBlink = Math.floor(frame / 20) % 2 === 0;
 	const clickPulse = spring({frame: frame - 15, fps, config: {damping: 8, stiffness: 200}});
-	const emailClientOpacity = interpolate(frame, [40, 65], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const emailClientOpacity = interpolate(frame, [25, 45], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 	const emailClientY = interpolate(
-		spring({frame: frame - 40, fps, config: {damping: 18, stiffness: 160}}),
+		spring({frame: frame - 25, fps, config: {damping: 18, stiffness: 160}}),
 		[0, 1], [30, 0]
 	);
-	const fadeOut = interpolate(frame, [155, 180], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const fadeOut = interpolate(frame, [95, 120], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
 	return (
 		<AbsoluteFill style={{background: '#f8fafc', opacity: fadeOut}}>
@@ -125,7 +125,7 @@ export const OpenDraftScene = () => {
 						display: 'flex',
 						alignItems: 'center',
 						gap: 6,
-						opacity: interpolate(frame, [75, 100], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
+						opacity: interpolate(frame, [50, 75], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
 					}}>
 						<span style={{width: 18, height: 18, background: '#dcfce7', borderRadius: '50%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 10}}>✓</span>
 						You review. You send. Rapport never sends on your behalf.

@@ -8,9 +8,9 @@ import {Outro} from './scenes/Outro';
 // Scene timing (frames at 30fps)
 // Intro:      0  –  90  (3s)
 // Problem:   90  – 210  (4s)
-// Digest:   210  – 390  (6s)
-// OpenDraft:390  – 570  (6s)
-// Outro:    570  – 720  (5s)
+// Digest:   210  – 330  (4s)
+// OpenDraft:330  – 450  (4s)
+// Outro:    450  – 570  (4s)
 
 export const RapportDemo = () => {
 	const frame = useCurrentFrame();
@@ -25,20 +25,20 @@ export const RapportDemo = () => {
 
 	return (
 		<AbsoluteFill style={{background: '#f8fafc', fontFamily: "'Plus Jakarta Sans', sans-serif"}}>
-			<Audio src={staticFile('audio/background.mp3')} volume={musicVolume} />
+			<Audio src={staticFile('audio/background.mp3')} volume={0.5} />
 			<Sequence from={0} durationInFrames={90}>
 				<Intro />
 			</Sequence>
 			<Sequence from={90} durationInFrames={120}>
 				<ProblemScene />
 			</Sequence>
-			<Sequence from={210} durationInFrames={180}>
+			<Sequence from={210} durationInFrames={120}>
 				<DigestScene />
 			</Sequence>
-			<Sequence from={390} durationInFrames={180}>
+			<Sequence from={330} durationInFrames={120}>
 				<OpenDraftScene />
 			</Sequence>
-			<Sequence from={570} durationInFrames={150}>
+			<Sequence from={450} durationInFrames={120}>
 				<Outro />
 			</Sequence>
 		</AbsoluteFill>

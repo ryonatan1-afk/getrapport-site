@@ -13,8 +13,8 @@ export const Outro = () => {
 
 	const headingOpacity = interpolate(frame, [0, 12], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 	const statsOpacity = interpolate(frame, [18, 38], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-	const ctaScale = spring({frame: frame - 45, fps, config: {damping: 14, stiffness: 160}});
-	const ctaOpacity = interpolate(frame, [45, 65], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const ctaScale = spring({frame: frame - 35, fps, config: {damping: 14, stiffness: 160}});
+	const ctaOpacity = interpolate(frame, [35, 55], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
 	return (
 		<AbsoluteFill
