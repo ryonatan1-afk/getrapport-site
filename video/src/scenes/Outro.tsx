@@ -11,10 +11,10 @@ export const Outro = () => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
-	const headingOpacity = interpolate(frame, [0, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-	const statsOpacity = interpolate(frame, [40, 70], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-	const ctaScale = spring({frame: frame - 90, fps, config: {damping: 14, stiffness: 120}});
-	const ctaOpacity = interpolate(frame, [90, 120], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const headingOpacity = interpolate(frame, [0, 20], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const statsOpacity = interpolate(frame, [25, 50], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const ctaScale = spring({frame: frame - 60, fps, config: {damping: 14, stiffness: 160}});
+	const ctaOpacity = interpolate(frame, [60, 85], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
 	return (
 		<AbsoluteFill

@@ -5,9 +5,9 @@ export const Intro = () => {
 	const {fps} = useVideoConfig();
 
 	const logoScale = spring({frame, fps, config: {damping: 14, stiffness: 120}});
-	const textOpacity = interpolate(frame, [20, 50], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-	const subOpacity = interpolate(frame, [50, 90], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [120, 150], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const textOpacity = interpolate(frame, [10, 30], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const subOpacity = interpolate(frame, [25, 50], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const fadeOut = interpolate(frame, [65, 90], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
 	return (
 		<AbsoluteFill
