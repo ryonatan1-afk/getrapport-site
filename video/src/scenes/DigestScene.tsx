@@ -80,8 +80,8 @@ export const DigestScene = () => {
 	const {fps} = useVideoConfig();
 
 	const emailSlide = spring({frame, fps, config: {damping: 18, stiffness: 90}});
-	const labelOpacity = interpolate(frame, [0, 12], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [330, 360], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const labelOpacity = interpolate(frame, [0, 10], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const fadeOut = interpolate(frame, [155, 180], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
 	const emailX = interpolate(emailSlide, [0, 1], [80, 0]);
 
