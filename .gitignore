@@ -6,3 +6,10 @@ dist/
 skills-lock.json
 video/node_modules/
 video/out/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
